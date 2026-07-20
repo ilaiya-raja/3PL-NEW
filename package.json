@@ -1,0 +1,37 @@
+{
+  "name": "3pl-wms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Digisailor 3PL Warehouse Management System",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "test:e2e": "turbo run test:e2e",
+    "db:generate": "npm run generate -w @wms/db",
+    "db:migrate": "npm run migrate -w @wms/db",
+    "db:seed": "npm run seed -w @wms/db",
+    "db:studio": "npm run studio -w @wms/db",
+    "license:generate": "npm run generate-dev-license -w @wms/db",
+    "clean": "turbo run clean && rm -rf node_modules"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "prettier": "^3.4.2",
+    "turbo": "^2.3.3",
+    "typescript": "^5.7.2"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@10.9.0",
+  "dependencies": {
+    "bcrypt": "^6.0.0"
+  }
+}

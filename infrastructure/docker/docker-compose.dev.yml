@@ -1,0 +1,64 @@
+name: wms-dev
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: wms-dev-postgres
+    ports:
+      # Host 5433 avoids conflict with a local Postgres often bound to 5432
+      - "5433:5432"
+    environment:
+      POSTGRES_USER: wms
+      POSTGRES_PASSWORD: wms123
+      POSTGRES_DB: wms_dev
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./init-db.sql:/docker-entrypoint-initdb.d/init-db.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U wms -d wms_dev"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  valkey:
+    image: valkey/valkey:7-alpine
+    container_name: wms-dev-valkey
+    ports:
+      - "6379:6379"
+    command: valkey-server --appendonly yes
+    volumes:
+      - valkey_data:/data
+    healthcheck:
+      test: ["CMD", "valkey-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+  minio:
+    image: minio/minio:latest
+    container_name: wms-dev-minio
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    environment:
+      MINIO_ROOT_USER: minioadmin
+      MINIO_ROOT_PASSWORD: minioadmin
+    command: server /data --console-address ":9001"
+    volumes:
+      - minio_data:/data
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+
+volumes:
+  postgres_data:
+    name: wms_dev_postgres_data
+  valkey_data:
+    name: wms_dev_valkey_data
+  minio_data:
+    name: wms_dev_minio_data

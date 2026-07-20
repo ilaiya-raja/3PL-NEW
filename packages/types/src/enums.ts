@@ -1,0 +1,194 @@
+export enum ClientStatus {
+  PROSPECT = 'PROSPECT',
+  ONBOARDING = 'ONBOARDING',
+  ACTIVE = 'ACTIVE',
+  SUSPENDED = 'SUSPENDED',
+  OFFBOARDED = 'OFFBOARDED',
+}
+
+export enum ZoneType {
+  RECEIVING = 'RECEIVING',
+  RESERVE = 'RESERVE',
+  PICK = 'PICK',
+  PACK = 'PACK',
+  STAGING = 'STAGING',
+  QUARANTINE = 'QUARANTINE',
+  RETURNS = 'RETURNS',
+  YARD = 'YARD',
+}
+
+export enum TempClass {
+  AMBIENT = 'AMBIENT',
+  CHILLED = 'CHILLED',
+  FROZEN = 'FROZEN',
+}
+
+export enum LocationType {
+  PICK_FACE = 'PICK_FACE',
+  RESERVE = 'RESERVE',
+  STAGING = 'STAGING',
+  DOCK = 'DOCK',
+  YARD = 'YARD',
+  VIRTUAL = 'VIRTUAL',
+}
+
+export enum LotStatus {
+  RECEIVED = 'RECEIVED',
+  AVAILABLE = 'AVAILABLE',
+  PICKED = 'PICKED',
+  ON_HOLD = 'ON_HOLD',
+  QC_HOLD = 'QC_HOLD',
+  QUARANTINE = 'QUARANTINE',
+  DAMAGED = 'DAMAGED',
+  EXPIRED = 'EXPIRED',
+}
+
+export enum TxnType {
+  RECEIPT = 'RECEIPT',
+  PUTAWAY = 'PUTAWAY',
+  PICK = 'PICK',
+  PACK = 'PACK',
+  SHIP = 'SHIP',
+  ADJUST = 'ADJUST',
+  TRANSFER_OUT = 'TRANSFER_OUT',
+  TRANSFER_IN = 'TRANSFER_IN',
+  HOLD = 'HOLD',
+  RELEASE = 'RELEASE',
+  COUNT = 'COUNT',
+  RETURN = 'RETURN',
+  ALLOCATE = 'ALLOCATE',
+  DEALLOCATE = 'DEALLOCATE',
+}
+
+export enum ReceiptStatus {
+  EXPECTED = 'EXPECTED',
+  ARRIVED = 'ARRIVED',
+  RECEIVING = 'RECEIVING',
+  QC = 'QC',
+  COMPLETE = 'COMPLETE',
+  CANCELLED = 'CANCELLED',
+}
+
+export enum OrderStatus {
+  RECEIVED = 'RECEIVED',
+  VALIDATED = 'VALIDATED',
+  ALLOCATED = 'ALLOCATED',
+  RELEASED = 'RELEASED',
+  PICKING = 'PICKING',
+  PACKED = 'PACKED',
+  SHIPPED = 'SHIPPED',
+  CANCELLED = 'CANCELLED',
+  BACKORDERED = 'BACKORDERED',
+}
+
+export enum WaveStatus {
+  PLANNING = 'PLANNING',
+  RELEASED = 'RELEASED',
+  COMPLETE = 'COMPLETE',
+  CANCELLED = 'CANCELLED',
+}
+
+export enum CartonStatus {
+  OPEN = 'OPEN',
+  CLOSED = 'CLOSED',
+}
+
+export enum ShipStatus {
+  CREATED = 'CREATED',
+  MANIFESTED = 'MANIFESTED',
+  IN_TRANSIT = 'IN_TRANSIT',
+  DELIVERED = 'DELIVERED',
+  EXCEPTION = 'EXCEPTION',
+  RTO = 'RTO',
+}
+
+export enum OpsRole {
+  ADMIN = 'ADMIN',
+  SUPERVISOR = 'SUPERVISOR',
+  WAREHOUSE_OPS = 'WAREHOUSE_OPS',
+  BILLING = 'BILLING',
+  READONLY = 'READONLY',
+}
+
+export enum PortalRole {
+  CLIENT_ADMIN = 'CLIENT_ADMIN',
+  ORDER_ENTRY = 'ORDER_ENTRY',
+  VIEWER = 'VIEWER',
+}
+
+export enum ChargeType {
+  STORAGE = 'STORAGE',
+  PICK = 'PICK',
+  PACK = 'PACK',
+  SHIP = 'SHIP',
+  VAS = 'VAS',
+  COMMIT_TOPUP = 'COMMIT_TOPUP',
+}
+
+export enum ChargeStatus {
+  DRAFT = 'DRAFT',
+  INVOICED = 'INVOICED',
+  VOID = 'VOID',
+}
+
+export enum InvoiceStatus {
+  DRAFT = 'DRAFT',
+  ISSUED = 'ISSUED',
+  PAID = 'PAID',
+  VOID = 'VOID',
+}
+
+export enum AdjustmentStatus {
+  PENDING_APPROVAL = 'PENDING_APPROVAL',
+  APPROVED = 'APPROVED',
+  REJECTED = 'REJECTED',
+}
+
+export enum HoldType {
+  CLIENT_HOLD = 'CLIENT_HOLD',
+  QC_HOLD = 'QC_HOLD',
+  RECALL_HOLD = 'RECALL_HOLD',
+  LEGAL_HOLD = 'LEGAL_HOLD',
+}
+
+export enum PickTaskStatus {
+  OPEN = 'OPEN',
+  IN_PROGRESS = 'IN_PROGRESS',
+  COMPLETE = 'COMPLETE',
+  SHORT = 'SHORT',
+  CANCELLED = 'CANCELLED',
+}
+
+export enum AppointmentStatus {
+  SCHEDULED = 'SCHEDULED',
+  CHECKED_IN = 'CHECKED_IN',
+  CHECKED_OUT = 'CHECKED_OUT',
+  NO_SHOW = 'NO_SHOW',
+  CANCELLED = 'CANCELLED',
+}
+
+export enum LicenseEdition {
+  STARTER = 'STARTER',
+  PROFESSIONAL = 'PROFESSIONAL',
+  ENTERPRISE = 'ENTERPRISE',
+}
+
+export enum AuthRealm {
+  OPS = 'OPS',
+  PORTAL = 'PORTAL',
+}
+
+export enum AllocationStrategy {
+  FEFO = 'FEFO',
+  FIFO = 'FIFO',
+}
+
+export enum DocumentType {
+  ASN = 'ASN',
+  BOL = 'BOL',
+  PACKING_LIST = 'PACKING_LIST',
+  INVOICE = 'INVOICE',
+  POD = 'POD',
+  LABEL = 'LABEL',
+  OTHER = 'OTHER',
+}

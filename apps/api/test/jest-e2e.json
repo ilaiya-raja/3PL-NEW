@@ -1,0 +1,15 @@
+{
+  "moduleFileExtensions": ["js", "json", "ts"],
+  "rootDir": ".",
+  "testEnvironment": "node",
+  "testRegex": ".e2e-spec.ts$",
+  "transform": {
+    "^.+\\.(t|j)s$": "ts-jest"
+  },
+  "moduleNameMapper": {
+    "^@wms/types$": "<rootDir>/../../packages/types/src/index.ts",
+    "^@wms/zod-schemas$": "<rootDir>/../../packages/zod-schemas/src/index.ts",
+    "^@wms/db$": "<rootDir>/../../packages/db/src/index.ts"
+  },
+  "testTimeout": 120000
+}
